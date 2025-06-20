@@ -1,2 +1,2 @@
 # Chat-Simple-2025-Integraci-n
-## Para ver el codigo dirijase a la rama master por favor ⛹️‍♂️
+## Para ver el codigo diríjase a la rama master por favor ⛹️‍♂️
