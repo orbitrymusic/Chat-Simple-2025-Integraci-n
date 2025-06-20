@@ -10,7 +10,7 @@ Socket.IO
 Nodemon
 
 ## Instrucciones
--Luego de iniciar el servidor:
--Abrir dos ventanas en tu Navegador Web (Browser).
--Colocar las siguiente URL en una de las ventanas: http://localhost:3000/?user=1
--Colacar esta URL en la otra ventana: http://localhost:3000/?user=2
+- Luego de iniciar el servidor:
+- Abrir dos ventanas en tu Navegador Web (Browser).
+- Colocar las siguiente URL en una de las ventanas: http://localhost:3000/?user=1
+- Colacar esta URL en la otra ventana: http://localhost:3000/?user=2
