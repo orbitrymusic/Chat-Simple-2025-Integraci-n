@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatIntegracion</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+       
+    #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .message {
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 5px;
+        max-width: 60%;
+    }
+    .user1 {
+        background-color: #c8e6c9;
+        align-self: flex-start;
+        text-align: left;
+    }
+    .user2 {
+        background-color: #ffe082;
+        align-self: flex-end;
+        text-align: right;
+    }
+    #messages li {
+        display: flex;
+    }
+    </style>
+</head>
+<body>
+   <ul id="messages"></ul> 
+   <form action="" id="form">
+    <input  id="input" autocomplete="off">
+    <button >Send</button> 
+   </form>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const user = params.get('user') || '1';
+
+        document.body.style.backgroundColor = user === '1' ? '#e3f2fd' : '#fce4ec';
+
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+        const socket = io();
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (input.value.trim()) {
+                socket.emit('chat message', { msg: input.value, user });
+                input.value = "";
+            }
+        });
+
+        socket.on('chat message', ({ msg, user }) => {
+            const item = document.createElement("li");
+            const span = document.createElement("span");
+            span.textContent = msg;
+            span.classList.add("message");
+            span.classList.add(user === '1' ? 'user1' : 'user2');
+
+            item.appendChild(span);
+            document.getElementById('messages').appendChild(item);
+        });
+    </script>
+  </body>
+</html>
