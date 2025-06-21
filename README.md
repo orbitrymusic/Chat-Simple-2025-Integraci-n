@@ -4,7 +4,7 @@ Esta aplicacion es un chat sencillo para dos usuarios y corresponde a un trabajo
 ## Tecnología utilizada
 Entorno de ejecución:Node.js
 
-## Librerias:
+Librerias:
 Express
 Socket.IO
 Nodemon
